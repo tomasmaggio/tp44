@@ -1,0 +1,36 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="inicio">Inicio</a>
+      <a mat-list-item href="moda">Moda</a>
+      <a mat-list-item href="futbol">Futbol</a>
+      <a mat-list-item href="basquet">Basquet</a>
+      <a mat-list-item href="running">Running</a>
+      <a mat-list-item href="marcas">Marcas</a>
+      <a mat-list-item href="galeria">Galería</a>
+      <a mat-list-item href="nosotros">Nuestra empresa</a>
+      <a mat-list-item href="contacto">Contacto</a>
+      <a mat-list-item href="emplear">Trabaja con nosotros</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>SNKERS</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>
